@@ -4,18 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Net.Sockets;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace Salle.Control
 {
     class ChefRang
     {
-        private static void Envoi(message message)
+        private static void Envoi(Cuisine.Message message)
         {
             //Sérialisation du message en tableau de bytes.
-            byte[] msge = Encoding.Default.GetBytes(message.e);
-            byte[] msgp = Encoding.Default.GetBytes(message.p);
-            byte[] msgd = Encoding.Default.GetBytes(message.d);
-            byte[] msgn = Encoding.Default.GetBytes(message.N);
+            byte[] msge = Encoding.Default.GetBytes(message.Entree);
+            byte[] msgp = Encoding.Default.GetBytes(message.Plat);
+            byte[] msgd = Encoding.Default.GetBytes(message.Dessert);
+            byte[] msgn = Encoding.Default.GetBytes(message.NTable);
 
 
             UdpClient udpClient = new UdpClient();
