@@ -13,12 +13,12 @@ namespace Cuisine
     {
         private static Thread _thEcoute;
 
-        private static void Main(string[] args)
-        {
-            //Préparation et démarrage du thread en charge d'écouter.
-            _thEcoute = new Thread(new ThreadStart(Ecouter));
-            _thEcoute.Start();
-        }
+        //private static void Main(string[] args)
+        //{
+        //    //Préparation et démarrage du thread en charge d'écouter.
+        //    _thEcoute = new Thread(new ThreadStart(Ecouter));
+        //    _thEcoute.Start();
+        //}
 
         private static void Ecouter()
         {
