@@ -59,4 +59,3 @@ public class DAO
         public DbSet<Post> Posts { get; set; }
     }
 }
-}

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cuisine", "Cuisine\Cuisine.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salle", "Salle\Salle.csproj", "{ADBB3025-38DA-49E4-9E20-FF9B1B9F5F84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{A7467BB9-B876-4588-851A-5AD8A53C9F72}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{ADBB3025-38DA-49E4-9E20-FF9B1B9F5F84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADBB3025-38DA-49E4-9E20-FF9B1B9F5F84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADBB3025-38DA-49E4-9E20-FF9B1B9F5F84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7467BB9-B876-4588-851A-5AD8A53C9F72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7467BB9-B876-4588-851A-5AD8A53C9F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7467BB9-B876-4588-851A-5AD8A53C9F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7467BB9-B876-4588-851A-5AD8A53C9F72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

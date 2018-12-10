@@ -52,16 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\CLIENTS.cs" />
-    <Compile Include="DAO\ConnexionBDD.cs" />
-    <Compile Include="DAO\COUVERTS.cs" />
-    <Compile Include="DAO\GROUPE.cs" />
-    <Compile Include="DAO\INGREDIENTS.cs" />
-    <Compile Include="DAO\RECETTE.cs" />
-    <Compile Include="DAO\SUPPLEMENT.cs" />
-    <Compile Include="DAO\TABLE.cs" />
-    <Compile Include="DAO\USTENSILES.cs" />
-    <Compile Include="DAO\WORKERS.cs" />
+    <Compile Include="ChefDeCuisine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -69,6 +60,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{a7467bb9-b876-4588-851a-5ad8a53c9f72}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -3,15 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;
 
 namespace Cuisine
 {
-    class Program
+    class Message
     {
-        static void Main(string[] args)
-        {
-
-        }
     }
 }
