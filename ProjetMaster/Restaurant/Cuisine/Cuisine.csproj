@@ -53,6 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChefDeCuisine.cs" />
+    <Compile Include="ChefDePartie.cs" />
+    <Compile Include="CommisCuisine.cs" />
+    <Compile Include="Plongeur.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

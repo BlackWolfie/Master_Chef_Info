@@ -8,14 +8,15 @@ namespace Cuisine
 {
     class ChefDeCuisine : WORKERS
     {
-        public void ReceptionClient(Message MSG)
+        public void ReceptionCommande(Message MSG)
         {
 
         }
 
-        public void AttribuerTable()
+        public void AttribuerTravail()
         {
 
         }
+        
     }
 }
