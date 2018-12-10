@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\ChefRang.cs" />
+    <Compile Include="Control\Client.cs" />
+    <Compile Include="Control\Commis.cs" />
+    <Compile Include="Control\Lancement.cs" />
+    <Compile Include="Control\MaitreHotel.cs" />
+    <Compile Include="Control\Serveur.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -62,6 +68,10 @@
       <Project>{a7467bb9-b876-4588-851a-5ad8a53c9f72}</Project>
       <Name>DAO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Salle.Control;
 
-namespace Salle
+namespace Salle.Control
 {
-    class Program
+    class Lancement
     {
-        static void Main(string[] args)
+        public Lancement()
         {
-            Lancement launching = new Lancement();
+
         }
+
+        public 
     }
 }

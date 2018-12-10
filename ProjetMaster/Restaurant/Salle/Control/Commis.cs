@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Salle.Control;
 
-namespace Salle
+namespace Salle.Control
 {
-    class Program
+    class Commis
     {
-        static void Main(string[] args)
+        public Commis()
         {
-            Lancement launching = new Lancement();
+
+        }
+
+        public void apportPain()
+        {
+
         }
     }
 }
