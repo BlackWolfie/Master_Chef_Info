@@ -50,6 +50,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\CLIENTS.cs" />
+    <Compile Include="DAO\ConnexionBDD.cs" />
+    <Compile Include="DAO\COUVERTS.cs" />
+    <Compile Include="DAO\GROUPE.cs" />
+    <Compile Include="DAO\INGREDIENTS.cs" />
+    <Compile Include="DAO\RECETTE.cs" />
+    <Compile Include="DAO\SUPPLEMENT.cs" />
+    <Compile Include="DAO\TABLE.cs" />
+    <Compile Include="DAO\USTENSILES.cs" />
+    <Compile Include="DAO\WORKERS.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
