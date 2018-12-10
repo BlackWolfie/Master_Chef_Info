@@ -56,6 +56,7 @@
     <Compile Include="Control\Lancement.cs" />
     <Compile Include="Control\MaitreHotel.cs" />
     <Compile Include="Control\Serveur.cs" />
+    <Compile Include="Control\Table.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
