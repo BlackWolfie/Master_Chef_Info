@@ -44,10 +44,44 @@ namespace Cuisine
                 string message = Encoding.Default.GetString(data);
                 //Console.WriteLine("CONTENU DU MESSAGE : {0}\n", message);
                 commande.Add(message);
+
+                int i = 0;
+                string Table = commande[0];
+                
+
+
+                foreach(string element in commande)
+                {
+                    switch (i)
+                    {
+                        case 1:
+                            ChefDePartie.preparerEntree(element);
+                            break;
+                        case 2:
+                            ChefDePartie.preparerPlat(element);
+                            break;
+                        case 3:
+                            ChefDePartie.preparerDessert(element);
+                            break;
+                    }
+
+                    i++;
+                }
             }
         }
         public void ReceptionCommande(Message MSG)
         {
+            //Recuperer Plat entrée et dessert 
+            using (var db = new ConnexionBDD()) {
+                string[] tab = new string[] { "Entrée", "Plat", "Dessert" };
+                RECETTE entree = new RECETTE();
+                
+                var entreeRecette = db.RECETTE
+                                      .Where(b => b.NOM_RECETTE == tab[0]);
+
+                Console.Write(entreeRecette);
+                    
+            }
 
         }
 
