@@ -13,12 +13,12 @@ namespace Cuisine
     {
         private static Thread _thEcoute;
 
-        //private static void Main(string[] args)
-        //{
-        //    //Préparation et démarrage du thread en charge d'écouter.
-        //    _thEcoute = new Thread(new ThreadStart(Ecouter));
-        //    _thEcoute.Start();
-        //}
+        private static void Main(string[] args)
+        {
+            //Préparation et démarrage du thread en charge d'écouter.
+            _thEcoute = new Thread(new ThreadStart(Ecouter));
+            _thEcoute.Start();
+        }
 
         private static void Ecouter()
         {
@@ -45,6 +45,17 @@ namespace Cuisine
         }
         public void ReceptionCommande(Message MSG)
         {
+            //Recuperer Plat entrée et dessert 
+            using (var db = new ConnexionBDD()) {
+                string[] tab = new string[] { "Entrée", "Plat", "Dessert" };
+                RECETTE entree = new RECETTE();
+                
+                var entreeRecette = db.RECETTE
+                                      .Where(b => b.NOM_RECETTE == tab[0]);
+
+                Console.Write(entreeRecette);
+                    
+            }
 
         }
 
