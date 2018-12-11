@@ -23,6 +23,8 @@ namespace Cuisine
 
         private static void Ecouter()
         {
+            CommisCuisine a = new CommisCuisine();
+
             //Console.WriteLine("Préparation à l'écoute...");
 
             //On crée le serveur en lui spécifiant le port sur lequel il devra écouter.
@@ -51,8 +53,7 @@ namespace Cuisine
                 }
 
                 ReceptionCommande(listage);
-
-                retournerCommande();
+                a.retournerCommande();
             }
         }
 
@@ -81,17 +82,7 @@ namespace Cuisine
 
         }
 
-        public static void retournerCommande()
-        {
-            byte[] msge = Encoding.Default.GetBytes("Commande prête !");
 
-            UdpClient udpClient = new UdpClient();
-
-            //La méthode Send envoie un message UDP.
-            udpClient.Send(msge, msge.Length, "127.0.0.1", 5036);
-
-            udpClient.Close();
-        }
         
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,6 +12,17 @@ namespace Cuisine
         public void RecevoirOrdre()
         {
 
+        }
+        public void retournerCommande()
+        {
+            byte[] msge = Encoding.Default.GetBytes("Commande prête !");
+
+            UdpClient udpClient = new UdpClient();
+
+            //La méthode Send envoie un message UDP.
+            udpClient.Send(msge, msge.Length, "127.0.0.1", 5036);
+
+            udpClient.Close();
         }
 
         public void EplucherLegumes()
