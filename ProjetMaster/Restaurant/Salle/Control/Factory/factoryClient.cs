@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Salle.Control
+namespace Salle.Control.Factory
 {
-    class Client
+    public class factoryClient
     {
-        public Client()
+        public static IClient CreateInstance()
         {
-            Factory.factoryClient mesClients = new Factory.factoryClient();
 
         }
     }
