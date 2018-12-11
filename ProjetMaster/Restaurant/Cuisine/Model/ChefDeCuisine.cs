@@ -23,7 +23,7 @@ namespace Cuisine
 
         private static void Ecouter()
         {
-            CommisCuisine a = new CommisCuisine;
+            CommisCuisine a = new CommisCuisine();
 
             //Console.WriteLine("Préparation à l'écoute...");
 
