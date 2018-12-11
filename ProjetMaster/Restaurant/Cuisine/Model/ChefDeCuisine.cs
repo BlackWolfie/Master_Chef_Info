@@ -13,34 +13,37 @@ namespace Cuisine
     {
         private static Thread _thEcoute;
 
-        //private static void Main(string[] args)
-        //{
-        //    //Préparation et démarrage du thread en charge d'écouter.
-        //    _thEcoute = new Thread(new ThreadStart(Ecouter));
-        //    _thEcoute.Start();
-        //}
+        public void Thread()
+        {
+            //Préparation et démarrage du thread en charge d'écouter.
+            _thEcoute = new Thread(new ThreadStart(Ecouter));
+            _thEcoute.Start();
+        }
 
         private static void Ecouter()
         {
-            Console.WriteLine("Préparation à l'écoute...");
+            //Console.WriteLine("Préparation à l'écoute...");
 
             //On crée le serveur en lui spécifiant le port sur lequel il devra écouter.
             UdpClient serveur = new UdpClient(5035);
+            //creation liste de commande par table
+            List<string> commande = new List<string>();
 
             //Création d'une boucle infinie qui aura pour tâche d'écouter.
             while (true)
             {
                 //Création d'un objet IPEndPoint qui recevra les données du Socket distant.
                 IPEndPoint client = null;
-                Console.WriteLine("ÉCOUTE...");
+                //Console.WriteLine("ÉCOUTE...");
 
                 //On écoute jusqu'à recevoir un message.
                 byte[] data = serveur.Receive(ref client);
-                Console.WriteLine("Données reçues en provenance de {0}:{1}.", client.Address, client.Port);
+                //Console.WriteLine("Données reçues en provenance de {0}:{1}.", client.Address, client.Port);
 
                 //Décryptage et affichage du message.
                 string message = Encoding.Default.GetString(data);
-                Console.WriteLine("CONTENU DU MESSAGE : {0}\n", message);
+                //Console.WriteLine("CONTENU DU MESSAGE : {0}\n", message);
+                commande.Add(message);
             }
         }
         public void ReceptionCommande(Message MSG)

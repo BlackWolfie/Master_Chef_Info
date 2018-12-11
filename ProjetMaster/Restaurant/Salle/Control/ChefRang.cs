@@ -12,20 +12,19 @@ namespace Salle.Control
     {
         private static void Envoi(Cuisine.Message message)
         {
-            //Sérialisation du message en tableau de bytes.
-            byte[] msge = Encoding.Default.GetBytes(message.Entree);
-            byte[] msgp = Encoding.Default.GetBytes(message.Plat);
-            byte[] msgd = Encoding.Default.GetBytes(message.Dessert);
-            byte[] msgn = Encoding.Default.GetBytes(message.NTable);
+            string entree = message.Entree;
+            string plat = message.Plat;
+            string dessert = message.Dessert;
+            string numero = message.NTable;
 
+            string concat = numero +"," + entree + "," + plat + "," + dessert;
+            //Sérialisation du message en tableau de bytes.
+            byte[] msge = Encoding.Default.GetBytes(concat);
 
             UdpClient udpClient = new UdpClient();
 
             //La méthode Send envoie un message UDP.
             udpClient.Send(msge, msge.Length, "127.0.0.1", 5035);
-            udpClient.Send(msgp, msgp.Length, "127.0.0.1", 5035);
-            udpClient.Send(msgd, msgd.Length, "127.0.0.1", 5035);
-            udpClient.Send(msgn, msgn.Length, "127.0.0.1", 5035);
 
             udpClient.Close();
         }
