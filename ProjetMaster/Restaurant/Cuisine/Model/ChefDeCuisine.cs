@@ -52,7 +52,7 @@ namespace Cuisine
 
                 ReceptionCommande(listage);
 
-                retournerCommande();
+                retournerCommande(listage[0]);
             }
         }
 
@@ -81,9 +81,9 @@ namespace Cuisine
 
         }
 
-        public static void retournerCommande()
+        public static void retournerCommande(string table)
         {
-            byte[] msge = Encoding.Default.GetBytes("Commande prête !");
+            byte[] msge = Encoding.Default.GetBytes(table);
 
             UdpClient udpClient = new UdpClient();
 
