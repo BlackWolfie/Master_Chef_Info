@@ -14,7 +14,10 @@ namespace Salle.Control
         private static Thread thEcoute;
 
         public Serveur()
-        {            Console.WriteLine("Bonjour Server");
+        {
+            Console.WriteLine("Bonjour Server");
+            Thread ecoute = new Thread(new ThreadStart(Ecouter));
+            ecoute.Start();
         }
 
         public void preparationSalle()

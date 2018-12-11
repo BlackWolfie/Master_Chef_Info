@@ -9,11 +9,9 @@ namespace Salle
 {
     class Program
     {
-        public static Serveur s = new Serveur();
         static void Main(string[] args)
         {
             Lancement launching = new Lancement();
-            s.Thread();
         }
     }
 }
