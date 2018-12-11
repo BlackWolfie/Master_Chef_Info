@@ -11,7 +11,8 @@ namespace Salle.Control
         
         public Lancement()
         {
-
+            installationSalle();
+            arriveePersonel();
             Client startClient = new Client();
         }
 
@@ -50,9 +51,15 @@ namespace Salle.Control
 
         public void arriveePersonel()
         {
-            int numEmploye = ;
-            Factory.factoryEmployes arrivage = new Factory.factoryEmployes(numEmploye);
-            Factory.factoryEmployes arrivage2 = new Factory.factoryEmployes(numEmploye);
+            MaitreHotel leMaitre = new MaitreHotel();
+            ChefRang leChef1 = new ChefRang();
+            ChefRang leChef2 = new ChefRang();
+            Serveur leServeur1 = new Serveur();
+            Serveur leServeur2 = new Serveur();
+            Serveur leServeur3 = new Serveur();
+            Serveur leServeur4 = new Serveur();
+            Commis leCommis = new Commis();
+
         }
 
         public void installationTables()

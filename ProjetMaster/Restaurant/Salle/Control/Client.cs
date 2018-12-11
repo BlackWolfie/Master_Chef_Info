@@ -10,8 +10,19 @@ namespace Salle.Control
     {
         public Client()
         {
-            Factory.factoryClient mesClients = new Factory.factoryClient();
 
         }
+
+        public void clientCommand()
+        {
+
+        }
+
+        public void clientEat()
+        {
+
+        }
+
+
     }
 }

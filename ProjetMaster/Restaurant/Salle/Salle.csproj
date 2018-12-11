@@ -53,9 +53,6 @@
     <Compile Include="Control\ChefRang.cs" />
     <Compile Include="Control\Client.cs" />
     <Compile Include="Control\Commis.cs" />
-    <Compile Include="Control\Factory\factoryClient.cs" />
-    <Compile Include="Control\Factory\factoryEmployes.cs" />
-    <Compile Include="Control\Factory\factoryTable.cs" />
     <Compile Include="Control\Lancement.cs" />
     <Compile Include="Control\MaitreHotel.cs" />
     <Compile Include="Control\Serveur.cs" />
