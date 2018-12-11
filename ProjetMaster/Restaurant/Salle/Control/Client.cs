@@ -10,7 +10,8 @@ namespace Salle.Control
     {
         public Client()
         {
-
+            int nombreClients = 4;
+            Console.WriteLine("Clients");
         }
 
         public void clientCommand()

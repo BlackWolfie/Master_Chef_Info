@@ -13,6 +13,24 @@ namespace Salle.Control
         {
             installationSalle();
             arriveePersonel();
+
+            Thread arrivage = new Thread(new ThreadStart(arriveeClients));
+            arrivage.Start();
+        }
+
+        public void arriveeClients()
+        {
+            while (true)
+            {
+                Random alea = new Random();
+                int newClient = alea.Next(100);
+                int i = 0;
+                if (newClient == 9)
+                {
+                    Thread.Sleep(1000);
+                    Client groupeCLient = new Client();
+                }
+            }
         }
 
         public void installationSalle()
