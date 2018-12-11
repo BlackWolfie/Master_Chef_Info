@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace Salle.Control
 {
-    class Lancement
+    public class Lancement
     {
+        
         public Lancement()
         {
-            Console.WriteLine("ouverture restaurant");
-            installationSalle();
+
+            Client startClient = new Client();
         }
 
         public void installationSalle()
@@ -44,14 +45,14 @@ namespace Salle.Control
             {
                 mesTables[i] = new Table(10);
             }
+            
         }
 
         public void arriveePersonel()
         {
-            MaitreHotel master = new MaitreHotel();
-            ChefRang chefDR = new ChefRang();
-
-        
+            int numEmploye = ;
+            Factory.factoryEmployes arrivage = new Factory.factoryEmployes(numEmploye);
+            Factory.factoryEmployes arrivage2 = new Factory.factoryEmployes(numEmploye);
         }
 
         public void installationTables()
