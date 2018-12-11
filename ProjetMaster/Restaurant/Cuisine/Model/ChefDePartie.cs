@@ -13,7 +13,17 @@ namespace Cuisine
 
         }
 
-        public void PreparerCommande()
+        public void preparerEntree(string entree)
+        {
+
+        }
+
+        public void preparerDessert(string dessert)
+        {
+
+        }
+
+        public void preparerPlat(string plat)
         {
 
         }

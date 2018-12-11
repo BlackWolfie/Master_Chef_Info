@@ -11,6 +11,8 @@ namespace Cuisine
     {
         static void Main(string[] args)
         {
+            ChefDeCuisine t = new ChefDeCuisine();
+            t.Thread();
 
         }
     }
