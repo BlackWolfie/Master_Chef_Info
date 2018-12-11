@@ -28,7 +28,7 @@ namespace Salle.Control
 
         }
 
-        public void apportRepas()
+        public static void apportRepas(string message)
         {
                 
         }
@@ -65,11 +65,11 @@ namespace Salle.Control
                 //Décryptage et affichage du message.
                 string message = Encoding.Default.GetString(data);
 
-                commande.Add(message);
+                
 
-                foreach (string command in commande)
+                if(message is string)
                 {
-                     listage =  command.Split(new char[] { ',' });
+                    apportRepas(message);
                 }
             }
         }
