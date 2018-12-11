@@ -14,8 +14,7 @@ namespace Salle.Control
         private static Thread thEcoute;
 
         public Serveur()
-        {
-
+        {            Console.WriteLine("Bonjour Server");
         }
 
         public void preparationSalle()

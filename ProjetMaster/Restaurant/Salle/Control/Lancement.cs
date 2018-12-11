@@ -13,7 +13,6 @@ namespace Salle.Control
         {
             installationSalle();
             arriveePersonel();
-            Client startClient = new Client();
         }
 
         public void installationSalle()
