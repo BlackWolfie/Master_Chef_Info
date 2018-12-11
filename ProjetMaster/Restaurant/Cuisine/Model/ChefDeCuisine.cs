@@ -23,6 +23,8 @@ namespace Cuisine
 
         private static void Ecouter()
         {
+            CommisCuisine a = new CommisCuisine;
+
             //Console.WriteLine("Préparation à l'écoute...");
 
             //On crée le serveur en lui spécifiant le port sur lequel il devra écouter.
@@ -51,8 +53,7 @@ namespace Cuisine
                 }
 
                 ReceptionCommande(listage);
-
-                retournerCommande();
+                a.retournerCommande();
             }
         }
 
