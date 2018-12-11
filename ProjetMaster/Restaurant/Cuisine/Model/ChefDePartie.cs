@@ -13,19 +13,41 @@ namespace Cuisine
 
         }
 
-        public void preparerEntree(string entree)
+        public static void preparerEntree(string entree, string Table)
         {
+            Console.WriteLine(entree);
+            Console.WriteLine(Table);
+            using (var db = new ConnexionBDD())
+            {
+                var entreeQ = db.RECETTE
+                                .Where(b => b.NOM_RECETTE == entree)
+                                .ToList();
+                entreeQ.ForEach(m => Console.WriteLine(m.NOM_RECETTE));
 
+            }
+        }
+        public static void preparerPlat(string plat, string Table)
+        {
+            using (var db = new ConnexionBDD())
+            {
+                var PlatQ = db.RECETTE
+                                .Where(b => b.NOM_RECETTE == plat)
+                                .ToList();
+                PlatQ.ForEach(m => Console.WriteLine(m.NOM_RECETTE));
+
+            }
         }
 
-        public void preparerDessert(string dessert)
+        public static void preparerDessert(string dessert, string Table)
         {
+            using (var db = new ConnexionBDD())
+            {
+                var DessertQ = db.RECETTE
+                                .Where(b => b.NOM_RECETTE == dessert)
+                                .ToList();
+                DessertQ.ForEach(m => Console.WriteLine(m.NOM_RECETTE));
 
-        }
-
-        public void preparerPlat(string plat)
-        {
-
+            }
         }
 
         public void OrdreCommis()

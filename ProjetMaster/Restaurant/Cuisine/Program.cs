@@ -9,11 +9,13 @@ namespace Cuisine
 {
     class Program
     {
+        public static ChefDePartie CDP = new ChefDePartie();
+        public static ChefDeCuisine CDC = new ChefDeCuisine();
+        public static List<RECETTE> entreeQ;
+
         static void Main(string[] args)
         {
-            ChefDeCuisine t = new ChefDeCuisine();
-            t.Thread();
-
+            CDC.Thread();
         }
     }
 }

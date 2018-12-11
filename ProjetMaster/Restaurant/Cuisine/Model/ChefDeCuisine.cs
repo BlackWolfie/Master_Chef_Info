@@ -7,11 +7,12 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Cuisine 
+namespace Cuisine
 {
     class ChefDeCuisine : WORKERS
     {
         private static Thread _thEcoute;
+        public static ChefDePartie CDP = Program.CDP;
 
         public void Thread()
         {
@@ -28,66 +29,68 @@ namespace Cuisine
             UdpClient serveur = new UdpClient(5035);
             //creation liste de commande par table
             List<string> commande = new List<string>();
-
+            string[] listage = new string[4];
+            
             //Création d'une boucle infinie qui aura pour tâche d'écouter.
             while (true)
             {
                 //Création d'un objet IPEndPoint qui recevra les données du Socket distant.
                 IPEndPoint client = null;
-                //Console.WriteLine("ÉCOUTE...");
 
                 //On écoute jusqu'à recevoir un message.
                 byte[] data = serveur.Receive(ref client);
-                //Console.WriteLine("Données reçues en provenance de {0}:{1}.", client.Address, client.Port);
-
+                
                 //Décryptage et affichage du message.
                 string message = Encoding.Default.GetString(data);
-                //Console.WriteLine("CONTENU DU MESSAGE : {0}\n", message);
+
                 commande.Add(message);
 
-                int i = 0;
-                string Table = commande[0];
-                
-
-
-                foreach(string element in commande)
+                foreach (string command in commande)
                 {
-                    switch (i)
-                    {
-                        case 1:
-                            ChefDePartie.preparerEntree(element);
-                            break;
-                        case 2:
-                            ChefDePartie.preparerPlat(element);
-                            break;
-                        case 3:
-                            ChefDePartie.preparerDessert(element);
-                            break;
-                    }
-
-                    i++;
+                    listage = command.Split(new char[] { ',' });
                 }
+
+                ReceptionCommande(listage);
+
+                retournerCommande();
             }
         }
-        public void ReceptionCommande(Message MSG)
-        {
-            //Recuperer Plat entrée et dessert 
-            using (var db = new ConnexionBDD()) {
-                string[] tab = new string[] { "Entrée", "Plat", "Dessert" };
-                RECETTE entree = new RECETTE();
-                
-                var entreeRecette = db.RECETTE
-                                      .Where(b => b.NOM_RECETTE == tab[0]);
 
-                Console.Write(entreeRecette);
-                    
+        public static void ReceptionCommande(string[] listage)
+        {
+            int i = 0;
+            string Table = listage[0];
+
+            foreach (string element in listage)
+            {
+                switch (i)
+                {
+                    case 1:
+                        ChefDePartie.preparerEntree(element, Table);
+                        break;
+                    case 2:
+                        ChefDePartie.preparerPlat(element, Table);
+                        break;
+                    case 3:
+                        ChefDePartie.preparerDessert(element, Table);
+                        break;
+                }
+
+                i++;
             }
 
         }
 
-        public void AttribuerTravail()
+        public static void retournerCommande()
         {
+            byte[] msge = Encoding.Default.GetBytes("Commande prête !");
 
+            UdpClient udpClient = new UdpClient();
+
+            //La méthode Send envoie un message UDP.
+            udpClient.Send(msge, msge.Length, "127.0.0.1", 5036);
+
+            udpClient.Close();
         }
         
     }
