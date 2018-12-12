@@ -57,5 +57,16 @@ namespace Salle.Control
 
         }
 
+        public void apporterCommande()
+        {
+            Console.WriteLine("Chef de rang : voici votre plat");
+
+        }
+
+        public void appelServeur()
+        {
+
+        }
+
     }
 }

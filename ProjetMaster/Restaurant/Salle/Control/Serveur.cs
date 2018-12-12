@@ -34,7 +34,9 @@ namespace Salle.Control
 
         public void ramassage()
         {
+            System.Threading.Thread.Sleep(1000);
 
+            Console.WriteLine("Je vais vous débarasser");
         }
 
     }

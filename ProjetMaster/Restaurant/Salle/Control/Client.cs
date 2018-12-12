@@ -72,7 +72,19 @@ namespace Salle.Control
 
         public void clientEat()
         {
+            System.Threading.Thread.Sleep(1000);
 
+            Console.WriteLine("MIAM MIAM");
+            System.Threading.Thread.Sleep(5000);
+
+            Serveur notreServeur = new Serveur();
+            notreServeur.ramassage();
+            
+        }
+
+        public void leaveAndPay()
+        {
+            Console.WriteLine("Merci beaucoup nous allons partir et payer");
         }
 
 
