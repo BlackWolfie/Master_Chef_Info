@@ -10,16 +10,10 @@ namespace Salle.Control
 {
     class ChefRang
     {
-        private static void Envoi(Cuisine.Message message)
+        private static void Envoi(String message)
         {
-            string entree = message.Entree;
-            string plat = message.Plat;
-            string dessert = message.Dessert;
-            string numero = message.NTable;
-
-            string concat = numero +"," + entree + "," + plat + "," + dessert;
             //Sérialisation du message en tableau de bytes.
-            byte[] msge = Encoding.Default.GetBytes(concat);
+            byte[] msge = Encoding.Default.GetBytes(message);
 
             UdpClient udpClient = new UdpClient();
 
@@ -30,21 +24,32 @@ namespace Salle.Control
         }
         public ChefRang()
         {
-            Console.WriteLine("Bonjour Chef");
+
         }
 
         public void installationClient()
         {
-
+            Console.WriteLine("Je vous installe ici");
+            distriCarte();
         }
 
         public void distriCarte()
         {
-
+            Console.WriteLine("Voici la carte");
+            priseCommande();
         }
 
         public void priseCommande()
         {
+            String[] desserts = { "gaufres", "crepes", "tiramisu", "tartelette", "bavarois", "madeleine" };
+            String[] entrees = { "feullete crabe", "oeuf cocotte", "gaspatcho", "paté", "tarte thon", "quiche", "foie gras" };
+            String[] plat = { "soupe", "pates saumon", "blanquette", "poulet" };
+
+
+            Client monCLient = new Client();
+
+            String commande = monCLient.clientCommand(desserts, entrees, plat);
+            Envoi(commande);
 
         }
 

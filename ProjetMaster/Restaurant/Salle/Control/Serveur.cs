@@ -14,7 +14,6 @@ namespace Salle.Control
 
         public Serveur()
         {
-            Console.WriteLine("Bonjour Server");
             
         }
 

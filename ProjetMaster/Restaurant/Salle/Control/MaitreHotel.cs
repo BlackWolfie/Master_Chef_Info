@@ -10,17 +10,19 @@ namespace Salle.Control
     {
         public MaitreHotel()
         {
-            Console.WriteLine("Bonjour master");
+            Client monCLient = new Client();
+            appelChefRang();
         }
-
-        public void accueil()
+        
+        public void accueilClient()
         {
-
+            Console.WriteLine("CLient est arrivé");
         }
 
         public void appelChefRang()
         {
-
+            ChefRang monChef = new ChefRang();
+            monChef.installationClient();
         }
     }
 }

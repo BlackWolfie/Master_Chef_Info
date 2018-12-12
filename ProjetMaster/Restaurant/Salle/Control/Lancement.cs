@@ -12,26 +12,15 @@ namespace Salle.Control
         public Lancement()
         {
             installationSalle();
-            arriveePersonel();
 
-            Thread arrivage = new Thread(new ThreadStart(arriveeClients));
-            arrivage.Start();
-        }
+            Client launch = new Client();
 
-        public void arriveeClients()
-        {
-            while (true)
-            {
-                Random alea = new Random();
-                int newClient = alea.Next(100);
-                int i = 0;
-                if (newClient == 9)
-                {
-                    Thread.Sleep(1000);
-                    Client groupeCLient = new Client();
-                }
-            }
+            Thread randomise = new Thread(new ThreadStart(launch.randClient));
+            randomise.Start();
+
+            
         }
+        
 
         public void installationSalle()
         {
@@ -64,19 +53,6 @@ namespace Salle.Control
                 mesTables[i] = new Table(10);
             }
             
-        }
-
-        public void arriveePersonel()
-        {
-            MaitreHotel leMaitre = new MaitreHotel();
-            ChefRang leChef1 = new ChefRang();
-            ChefRang leChef2 = new ChefRang();
-            Serveur leServeur1 = new Serveur();
-            Serveur leServeur2 = new Serveur();
-            Serveur leServeur3 = new Serveur();
-            Serveur leServeur4 = new Serveur();
-            Commis leCommis = new Commis();
-
         }
 
         public void installationTables()
