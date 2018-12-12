@@ -27,9 +27,11 @@ namespace Salle.Control
 
         }
 
-        public static void apportRepas(string message)
+        public void apportRepas()
         {
-                
+            Console.WriteLine("Voici votre repas :) ");
+            Client monClient = new Client();
+            monClient.clientEat();
         }
 
         public void ramassage()

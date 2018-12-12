@@ -74,7 +74,7 @@ namespace Salle.Control
         {
             System.Threading.Thread.Sleep(1000);
 
-            Console.WriteLine("MIAM MIAM");
+            Console.WriteLine("Client : MIAM MIAM");
             System.Threading.Thread.Sleep(5000);
 
             Serveur notreServeur = new Serveur();
@@ -84,7 +84,9 @@ namespace Salle.Control
 
         public void leaveAndPay()
         {
-            Console.WriteLine("Merci beaucoup nous allons partir et payer");
+            Console.WriteLine("CLient : Merci beaucoup nous allons partir et payer");
+            MaitreHotel notreMaitre = new MaitreHotel();
+            notreMaitre.adieu();
         }
 
 

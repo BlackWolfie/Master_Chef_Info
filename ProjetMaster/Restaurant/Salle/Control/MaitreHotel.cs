@@ -30,5 +30,10 @@ namespace Salle.Control
             ChefRang monChef = new ChefRang();
             monChef.installationClient(laTable);
         }
+
+        public void adieu()
+        {
+            Console.WriteLine("Maitre d'hotel : Bonne journée à vous");
+        }
     }
 }
