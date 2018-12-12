@@ -10,7 +10,7 @@ namespace Salle.Control
     {
         public MaitreHotel()
         {
-
+            Console.WriteLine("Bonjour master");
         }
 
         public void accueil()

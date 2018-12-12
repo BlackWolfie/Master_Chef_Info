@@ -10,8 +10,20 @@ namespace Salle.Control
     {
         public Client()
         {
-            Factory.factoryClient mesClients = new Factory.factoryClient();
+            int nombreClients = 4;
+            Console.WriteLine("Clients");
+        }
+
+        public void clientCommand()
+        {
 
         }
+
+        public void clientEat()
+        {
+
+        }
+
+
     }
 }

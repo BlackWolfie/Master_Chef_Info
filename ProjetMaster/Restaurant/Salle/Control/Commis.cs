@@ -10,7 +10,7 @@ namespace Salle.Control
     {
         public Commis()
         {
-
+            Console.WriteLine("Bonjour commis");
         }
 
         public void apportPain()

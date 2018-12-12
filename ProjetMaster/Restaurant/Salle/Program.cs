@@ -9,9 +9,11 @@ namespace Salle
 {
     class Program
     {
+        public static GetSocket s = new GetSocket();
         static void Main(string[] args)
         {
             Lancement launching = new Lancement();
+            s.Thread();
         }
     }
 }

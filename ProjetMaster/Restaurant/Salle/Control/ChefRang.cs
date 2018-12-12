@@ -30,7 +30,7 @@ namespace Salle.Control
         }
         public ChefRang()
         {
-
+            Console.WriteLine("Bonjour Chef");
         }
 
         public void installationClient()
