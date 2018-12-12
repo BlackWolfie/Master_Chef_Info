@@ -61,18 +61,15 @@ namespace Cuisine.Model
                 {
                     listage = command.Split(new char[] { ',' });
                 }
-                foreach (string plat in listage)
-                {
-                    //Console.WriteLine(plat);
-                }
 
                 ReceptionCommande(listage);
 
                 retournerCommande(listage[0]);
+
             }
         }
 
-        public static void ReceptionCommande(string[] listage)
+        public  void ReceptionCommande(string[] listage)
         {
         
             foreach (string element in listage)
@@ -82,9 +79,10 @@ namespace Cuisine.Model
 
         }
 
-        public static void retournerCommande(string table)
+        public  void retournerCommande(string table)
         {
-            byte[] msge = Encoding.Default.GetBytes(table);
+            
+            byte[] msge = Encoding.Default.GetBytes("Le plat est pret");
 
             UdpClient udpClient = new UdpClient();
 
