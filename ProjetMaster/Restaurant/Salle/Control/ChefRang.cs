@@ -1,15 +1,21 @@
-﻿using System;
+﻿using Cuisine.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Net;
 using System.Net.Sockets;
+using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
-using System.Data.Entity;
 
 namespace Salle.Control
 {
+
     class ChefRang
     {
+
+        private static Thread _thEcoute;
+
         private static void Envoi(String message)
         {
             //Sérialisation du message en tableau de bytes.
@@ -25,6 +31,43 @@ namespace Salle.Control
         public ChefRang()
         {
 
+        }
+        public void Thread()
+        {
+            //Préparation et démarrage du thread en charge d'écouter.
+            _thEcoute = new Thread(new ThreadStart(Ecouter));
+            _thEcoute.Start();
+        }
+        private void Ecouter()
+        {
+            //Console.WriteLine("Préparation à l'écoute...");
+
+            //On crée le serveur en lui spécifiant le port sur lequel il devra écouter.
+            UdpClient serveur = new UdpClient(5036);
+            //creation liste de commande par table
+            List<string> commande = new List<string>();
+            string[] listage = new string[4];
+
+            //Création d'une boucle infinie qui aura pour tâche d'écouter.
+            while (true)
+            {
+                //Création d'un objet IPEndPoint qui recevra les données du Socket distant.
+                IPEndPoint client = null;
+
+                //On écoute jusqu'à recevoir un message.
+                byte[] data = serveur.Receive(ref client);
+
+                //Décryptage et affichage du message.
+                string message = Encoding.Default.GetString(data);
+                Notify();
+                Console.WriteLine("Recu");
+
+
+            }
+        }
+        public void Notify()
+        {
+            Console.WriteLine("Notified");
         }
 
         public void installationClient(int laTable)
