@@ -64,7 +64,7 @@ namespace Cuisine.Model
 
                 ReceptionCommande(listage);
 
-                retournerCommande(listage[0]);
+                retournerCommande();
 
             }
         }
@@ -79,9 +79,9 @@ namespace Cuisine.Model
 
         }
 
-        public  void retournerCommande(string table)
+        public  void retournerCommande()
         {
-            
+            Console.Write("renvoi");
             byte[] msge = Encoding.Default.GetBytes("Le plat est pret");
 
             UdpClient udpClient = new UdpClient();
