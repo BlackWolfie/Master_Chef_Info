@@ -13,7 +13,6 @@ namespace Cuisine
     {
         public static ChefDePartie CDP = new ChefDePartie();
         public static ChefDeCuisine CDC = new ChefDeCuisine();
-        public static List<RECETTE> entreeQ;
 
         static void Main(string[] args)
         {
