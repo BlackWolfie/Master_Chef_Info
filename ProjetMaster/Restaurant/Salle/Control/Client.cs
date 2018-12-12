@@ -8,19 +8,19 @@ namespace Salle.Control
 {
     class Client
     {
-        public event EventHandler newClient;
 
         public Client()
         {
-            Console.WriteLine("Clients");
+
         }
 
         public void randClient()
         {
             while (true)
             {
+                Thread.Sleep(500);
                 Random alea = new Random();
-                int newClient = alea.Next(100);    
+                int newClient = alea.Next(10);    
                 if (newClient == 9)
                 {
                     arriveeClient();
@@ -33,35 +33,40 @@ namespace Salle.Control
 
         public void arriveeClient()
         {
-            Console.WriteLine("arrive");
+            Console.WriteLine("Clients : Bonjour nous sommes 4");
+            System.Threading.Thread.Sleep(1000);
         }
 
         public String clientCommand(String[] d, String[] e, String[] p)
         {
-            String command = "";
+            System.Threading.Thread.Sleep(1000);
 
+            String command = "";
+            Console.Write("Clients : Nous allons prendre : ");
             for (int i = 0; i < 4; i++)
             {
                 Random alea = new Random();
                 int choix = alea.Next(7);
-
+                Console.Write(e[i] + " ");
                 command += e[i] + ",";
             }
             for (int i = 0; i < 4; i++)
             {
                 Random alea = new Random();
                 int choix = alea.Next(4);
-
+                Console.Write(e[i] + " ");
                 command += p[i] + ",";
             }
             for (int i = 0; i < 4; i++)
             {
                 Random alea = new Random();
                 int choix = alea.Next(6);
-
+                Console.Write(e[i] + " ");
                 command += d[i] + ",";
             }
-            Console.WriteLine(command);
+            Console.WriteLine("");
+            System.Threading.Thread.Sleep(1000);
+
             return command;
         }
 

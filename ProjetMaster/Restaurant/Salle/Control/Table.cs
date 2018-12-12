@@ -15,7 +15,6 @@ namespace Salle.Control
 
         public int sizeTable(int taille)
         {
-            Console.WriteLine("table");
             return taille;
         }
 

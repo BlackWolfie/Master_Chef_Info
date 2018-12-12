@@ -27,15 +27,19 @@ namespace Salle.Control
 
         }
 
-        public void installationClient()
+        public void installationClient(int laTable)
         {
-            Console.WriteLine("Je vous installe ici");
+            System.Threading.Thread.Sleep(1000);
+
+            Console.WriteLine("Chef de rang : Je vous installe table " + laTable);
             distriCarte();
         }
 
         public void distriCarte()
         {
-            Console.WriteLine("Voici la carte");
+            System.Threading.Thread.Sleep(1000);
+
+            Console.WriteLine("Chef de rang : Voici la carte");
             priseCommande();
         }
 

@@ -11,6 +11,9 @@ namespace Salle.Control
         
         public Lancement()
         {
+
+            Console.WriteLine("---- OUVERTURE DU RESTAURANT ----");
+            Console.WriteLine(" ");
             installationSalle();
 
             Client launch = new Client();

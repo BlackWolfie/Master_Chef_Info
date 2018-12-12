@@ -11,7 +11,13 @@ namespace Salle.Control
         public MaitreHotel()
         {
             Client monCLient = new Client();
-            appelChefRang();
+
+            Random alea = new System.Random();
+            int laTable = alea.Next(10);
+            System.Threading.Thread.Sleep(1000);
+
+            Console.WriteLine("Maitre d'hotel : Bienvenue :) la table " + laTable + " est libre, nous allons vous installer");
+            appelChefRang(laTable);
         }
         
         public void accueilClient()
@@ -19,10 +25,10 @@ namespace Salle.Control
             Console.WriteLine("CLient est arrivé");
         }
 
-        public void appelChefRang()
+        public void appelChefRang(int laTable)
         {
             ChefRang monChef = new ChefRang();
-            monChef.installationClient();
+            monChef.installationClient(laTable);
         }
     }
 }
