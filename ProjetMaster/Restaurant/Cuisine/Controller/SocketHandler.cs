@@ -2,18 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Net;
-using System.Net.Sockets;
-using System.Threading;
 using System.Threading.Tasks;
-using Cuisine.Model;
 
 namespace Cuisine.Controller
 {
-    class ChefDeCuisine : Chef
+    class SocketHandler : IObservable<ChefDeCuisine>
     {
-        public ChefDeCuisine()
+        public IDisposable Subscribe(IObserver<ChefDeCuisine> observer)
         {
+
+            throw new NotImplementedException();
         }
     }
 }
