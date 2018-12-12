@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using Cuisine.Controller;
+using Cuisine.Model;
 
 namespace Cuisine
 {
@@ -15,6 +17,7 @@ namespace Cuisine
 
         static void Main(string[] args)
         {
+            CDC.Attach(new Subscriber());
             CDC.Thread();
         }
     }
