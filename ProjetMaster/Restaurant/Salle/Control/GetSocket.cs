@@ -38,6 +38,7 @@ namespace Salle.Control
                 byte[] data = serveur.Receive(ref client);
 
                 //Décryptage et affichage du message.
+                Console.WriteLine("c'est recu");
                 string message = Encoding.Default.GetString(data);
 
 

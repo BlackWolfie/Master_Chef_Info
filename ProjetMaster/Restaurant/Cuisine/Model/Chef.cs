@@ -64,7 +64,7 @@ namespace Cuisine.Model
 
                 ReceptionCommande(listage);
 
-                retournerCommande(listage[0]);
+                retournerCommande();
 
             }
         }
@@ -79,7 +79,7 @@ namespace Cuisine.Model
 
         }
 
-        public  void retournerCommande(string table)
+        public  void retournerCommande()
         {
             
             byte[] msge = Encoding.Default.GetBytes("Le plat est pret");

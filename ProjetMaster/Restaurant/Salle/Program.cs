@@ -13,6 +13,7 @@ namespace Salle
         static void Main(string[] args)
         {
             Lancement launching = new Lancement();
+
             s.Thread();
         }
     }
