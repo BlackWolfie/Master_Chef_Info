@@ -45,22 +45,23 @@ namespace Salle.Control
                 Random alea = new Random();
                 int choix = alea.Next(7);
 
-                command += e[i] + ", ";
+                command += e[i] + ",";
             }
             for (int i = 0; i < 4; i++)
             {
                 Random alea = new Random();
                 int choix = alea.Next(4);
 
-                command += p[i] + ", ";
+                command += p[i] + ",";
             }
             for (int i = 0; i < 4; i++)
             {
                 Random alea = new Random();
                 int choix = alea.Next(6);
 
-                command += d[i] + ", ";
+                command += d[i] + ",";
             }
+            Console.WriteLine(command);
             return command;
         }
 

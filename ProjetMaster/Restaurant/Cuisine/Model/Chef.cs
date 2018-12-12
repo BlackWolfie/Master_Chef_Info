@@ -61,6 +61,10 @@ namespace Cuisine.Model
                 {
                     listage = command.Split(new char[] { ',' });
                 }
+                foreach (string plat in listage)
+                {
+                    //Console.WriteLine(plat);
+                }
 
                 ReceptionCommande(listage);
 
@@ -70,25 +74,10 @@ namespace Cuisine.Model
 
         public static void ReceptionCommande(string[] listage)
         {
-            int i = 0;
-            string Table = listage[0];
-
+        
             foreach (string element in listage)
             {
-                switch (i)
-                {
-                    case 1:
-                        ChefDePartie.preparerEntree(element, Table);
-                        break;
-                    case 2:
-                        ChefDePartie.preparerPlat(element, Table);
-                        break;
-                    case 3:
-                        ChefDePartie.preparerDessert(element, Table);
-                        break;
-                }
-
-                i++;
+                ChefDePartie.preparerPlat(element);
             }
 
         }
